@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi mejor amiga Yuli ❤️</title>
+    <style>
+        /* Importar fuentes elegantes */
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;500&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0d1b2a;
+            /* Fondo inspirado en La Noche Estrellada */
+            background-image: radial-gradient(circle at 20% 30%, #fdbb2d 0%, transparent 10%), 
+                              url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1200px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            color: white;
+        }
+
+        /* --- SECCIÓN PORTADA --- */
+        .portada {
+            text-align: center;
+            margin-top: 30px;
+            width: 90%;
+            max-width: 600px;
+            z-index: 2;
+        }
+
+        /* Efecto papel arrancado */
+        .papel-arrancado {
+            background: #fdfdfd;
+            color: #333;
+            padding: 15px 25px;
+            margin-bottom: 20px;
+            transform: rotate(-2deg);
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            position: relative;
+            clip-path: polygon(0% 5%, 5% 0%, 15% 5%, 25% 0%, 35% 5%, 45% 0%, 55% 5%, 65% 0%, 75% 5%, 85% 0%, 95% 5%, 100% 0%, 100% 95%, 95% 100%, 85% 95%, 75% 100%, 65% 95%, 55% 100%, 45% 95%, 35% 100%, 25% 95%, 15% 100%, 5% 95%, 0% 100%);
+        }
+
+        .sesion-fotos-portada {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .sesion-fotos-portada img {
+            width: 140px;
+            height: 180px;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            transition: transform 0.3s;
+        }
+
+        .sesion-fotos-portada img:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        /* --- LA CAJA DE REGALO --- */
+        .contenedor-regalo {
+            margin: 50px 0;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .caja {
+            width: 150px;
+            height: 150px;
+            background: #1a1a1a; /* Caja Negra */
+            position: relative;
+            margin: 0 auto;
+            border-radius: 5px;
+            animation: bounce 1s infinite alternate ease-in-out;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+
+        /* Lazo Amarillo */
+        .lazo-v {
+            width: 30px;
+            height: 100%;
+            background: #ffd700;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .lazo-h {
+            width: 100%;
+            height: 30px;
+            background: #ffd700;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .nudo {
+            width: 50px;
+            height: 50px;
+            background: #ffd700;
+            border-radius: 50%;
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-25px); }
+        }
+
+        .texto-abreme {
+            margin-top: 15px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            color: #ffd700;
+            text-shadow: 2px 2px 5px black;
+        }
+
+        /* --- CONTENIDO OCULTO (LA CARTA) --- */
+        #carta-cumple {
+            display: none;
+            width: 90%;
+            max-width: 700px;
+            background: rgba(13, 27, 42, 0.85);
+            backdrop-filter: blur(10px);
+            border: 2px solid #ffd700;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+            animation: fadeIn 1.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .mensaje-texto {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        .titulo-carta {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #ffd700;
+            margin-bottom: 20px;
+        }
+
+        .corazones {
+            color: #e63946;
+            font-size: 1.5rem;
+        }
+
+        /* Galería de imágenes interior */
+        .galeria-interior {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .galeria-interior img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid #ffd700;
+        }
+
+        .firma {
+            margin-top: 30px;
+            text-align: right;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: #ffd700;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="portada" id="portada-seccion">
+        <div class="papel-arrancado">
+            Sesión de fotos ❤️
+        </div>
+        <div class="sesion-fotos-portada">
+            <img src="imagenes/Yuli_1.png" alt="Yuli 1">
+            <img src="imagenes/Yuli_2.png" alt="Yuli 2">
+        </div>
+    </div>
+
+    <div class="contenedor-regalo" id="regalo-clic" onclick="abrirCarta()">
+        <div class="caja">
+            <div class="lazo-v"></div>
+            <div class="lazo-h"></div>
+            <div class="nudo"></div>
+        </div>
+        <p class="texto-abreme">¡Ábreme, Yuli! ✨</p>
+    </div>
+
+    <div id="carta-cumple">
+        <h1 class="titulo-carta">¡Felices 22 añitos, Yuli! ❤️</h1>
+        
+        <div class="mensaje-texto">
+            Querida Yuli, no quería pasar desapercibido este día. Quiero desearte un <strong>feliz cumpleaños</strong>; te quiero mucho. 
+            Eres una mujer fuerte, has pasado por mucho y aun así sigues adelante. Nunca te estancas, aprendes de los problemas y disfrutas tus logros. ❤️<br><br>
+            Sé que serás una buena abogada, la mejor de todas. Espero estar en ese tiempo para poder celebrar a tu lado. <br><br>
+            Disfruta al máximo, nunca te des por vencida, espero hayas tenido un lindo día. ✨🎂
+        </div>
+
+        <div class="galeria-interior">
+            <img src="imagenes/Yuli_3.jpeg" alt="Recuerdo 3">
+            <img src="imagenes/Yuli_4.jpeg" alt="Recuerdo 4">
+            <img src="imagenes/Yuli_5.jpeg" alt="Recuerdo 5">
+            <img src="imagenes/Yuli_6.jpeg" alt="Recuerdo 6">
+        </div>
+
+        <p class="corazones">💖✨💐🥂⭐</p>
+        <p class="firma">Te quiere mucho, Macii</p>
+    </div>
+
+    <script>
+        function abrirCarta() {
+            // Ocultar el regalo y la portada al hacer clic
+            document.getElementById('regalo-clic').style.display = 'none';
+            document.getElementById('portada-seccion').style.display = 'none';
+            
+            // Mostrar la carta
+            const carta = document.getElementById('carta-cumple');
+            carta.style.display = 'block';
+            
+            // Scroll suave hacia arriba para leer
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html>
